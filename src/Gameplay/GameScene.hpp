@@ -40,7 +40,7 @@ inline void initGameScene(entt::registry& reg, SDL_Renderer* renderer) {
 
     // spawn enemies
     float startX = 200.f;
-    for (int i = 0; i < 10; i++) {
+    for (int i = 0; i < 20; i++) {
         float currentX = startX + (i * 100.f);
         g_enemyPool->spawnEnemy(currentX, -100.f);
     }

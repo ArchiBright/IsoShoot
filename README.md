@@ -100,9 +100,7 @@ The project evolves step-by-step — from a single green square to a complete pr
 
 ## 📸 Screenshots
 
-*(Add your screenshots later — for now, you can use an example placeholder.)*  
-
-![Gameplay Screenshot](Assets/screenshot.png)
+(./src/assets/screenshot.png)
 
 ---
 

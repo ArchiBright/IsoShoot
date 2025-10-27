@@ -44,7 +44,7 @@ void EnemyPool::update(float dt) {
         if (hp.hp > 0.f) activeCount++;
     }
     // respawn enemies
-    if (activeCount < 5) {
+    if (activeCount < 15) {
         float randX = static_cast<float>(rand() % 1000);
         float randY = static_cast<float>(rand() % -30);
         spawnEnemy(randX, randY);
