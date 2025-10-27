@@ -1,0 +1,18 @@
+# Build artifacts
+build/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+
+# Editor configs
+.vscode/
+.idea/
+
+# OS junk
+.DS_Store
+
+# SDL or asset caches
+*.log
+*.tmp
+*.cache

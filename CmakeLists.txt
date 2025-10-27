@@ -1,0 +1,30 @@
+cmake_minimum_required(VERSION 3.20)
+project(IsoShoot LANGUAGES CXX)
+
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_PREFIX_PATH "${CMAKE_PREFIX_PATH};/opt/homebrew/Cellar/sdl3_image/3.2.4/lib/cmake")
+
+find_package(SDL3 REQUIRED CONFIG)
+find_package(SDL3_image REQUIRED CONFIG)
+
+include_directories(${CMAKE_SOURCE_DIR}/external/entt/single_include)
+
+file(GLOB SRC_FILES
+    src/*.cpp
+    src/Core/*.cpp
+    src/Core/InputSystem.cpp
+    src/ECS/Systems/MovementSystem.cpp
+    src/ECS/Systems/EnemyAISystem.cpp
+    src/ECS/Systems/ShootingSystem.cpp
+    src/ECS/Systems/CollisionSystem.cpp
+    src/Gameplay/BulletPool.cpp
+    src/Gameplay/EnemyPool.cpp
+)
+
+# Сначала создаем исполняемый файл
+add_executable(IsoShoot ${SRC_FILES})
+
+# Потом подключаем зависимости
+target_include_directories(IsoShoot PRIVATE src)
+target_link_libraries(IsoShoot PRIVATE SDL3::SDL3 SDL3_image::SDL3_image)
